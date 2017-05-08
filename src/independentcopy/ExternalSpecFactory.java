@@ -36,6 +36,7 @@ public abstract class ExternalSpecFactory {
             inFile.close();
         
             // Next use Java reflection to create instance
+            //this only works if constructor has no parameters
             String className = props.getProperty("reader");
             Class clazz = Class.forName(className);
             r = (Reader)clazz.newInstance();
